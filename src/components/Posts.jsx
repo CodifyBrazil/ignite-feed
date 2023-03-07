@@ -87,7 +87,9 @@ export const Post = ({ author, content, publishedAt }) => {
           required
         />
         <footer>
-          <button type="submit">Comentar</button>
+          <button type="submit" disabled={newCommentText.length === 0}>
+            Comentar
+          </button>
         </footer>
       </form>
 
