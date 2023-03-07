@@ -43,6 +43,8 @@ export const Post = ({ author, content, publishedAt }) => {
     event.target.setCustomValidity("O comentario não pode ser vazio");
   };
 
+  const isNewCommentEmpty = newCommentText.length === 0;
+
   return (
     <article className={style.post}>
       <header>
@@ -87,8 +89,8 @@ export const Post = ({ author, content, publishedAt }) => {
           required
         />
         <footer>
-          <button type="submit" disabled={newCommentText.length === 0}>
-            Comentar
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
           </button>
         </footer>
       </form>
